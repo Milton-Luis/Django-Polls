@@ -1,0 +1,14 @@
+{% extends "layout.html" %}
+
+{% block content %}
+    {% if latest_question_list %}
+        <ol>
+            {% for question in latest_question_list %}
+                <li><a href="{% url 'polls:detail' question.id %}">{{ question.question_text }}</a></li>
+                <!-- <li><a href="/polls/{{ question.id }}">{{ question.question_text }}</a></li> -->
+            {% endfor %}
+        </ol>
+    {% else %}
+        <p>sem perguntas disponíveis</p>
+    {% endif %}
+{% endblock content %}
