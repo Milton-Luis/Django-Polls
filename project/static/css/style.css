@@ -1,3 +1,6 @@
-a:hover{
-    text-decoration-color: red;
+body{
+    background: url("../images/alphamon.jpg") no-repeat;
+}
+li a{
+    color: #00ff00;
 }
