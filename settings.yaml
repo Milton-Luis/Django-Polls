@@ -11,7 +11,7 @@ DEFAULT:
 
     WSGI_APPLICATION: "server.wsgi.application"
 
-    ALLOWED_HOSTS: ['localhost', '127.0.0.1', 'testserver']
+    ALLOWED_HOSTS: ["localhost", "127.0.0.1", "testserver"]
 
     STATIC_URL: "/static/"
     STATICFILES_DIRS: ["static/"]
@@ -24,6 +24,7 @@ DEFAULT:
             "django.contrib.sessions",
             "django.contrib.messages",
             "django.contrib.staticfiles",
+            "debug_toolbar",
 
             "apps.polls",
         ]
@@ -37,8 +38,11 @@ DEFAULT:
             "django.contrib.auth.middleware.AuthenticationMiddleware",
             "django.contrib.messages.middleware.MessageMiddleware",
             "django.middleware.clickjacking.XFrameOptionsMiddleware",
+             "debug_toolbar.middleware.DebugToolbarMiddleware",
         ]
 
+    INTERNAL_IPS: ["127.0.0.1"]
+    
     TEMPLATES:
         - BACKEND: "django.template.backends.django.DjangoTemplates"
           DIRS: ["templates"]
